@@ -1,9 +1,15 @@
 package org.iata.resource;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import org.bouncycastle.asn1.x509.GeneralName;
+
+import com.google.gson.Gson;
 import com.wisekey.ocsp.OcspUtils;
+import com.wisekey.openidconnect.OidcUtils;
+import com.wisekey.openidconnect.OidcException;
+import com.wisekey.openidconnect.TokenException;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -14,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import java.security.Principal;
+import javax.security.auth.x500.X500Principal;
 import java.security.cert.X509Certificate;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -37,10 +43,36 @@ public class SslClientAuthenticationTestResource {
   public ResponseEntity<String> doIt() {
     X509Certificate[] clientCertificateChain = (X509Certificate[]) request
         .getAttribute("javax.servlet.request.X509Certificate");
-    X509Certificate clientCertificate = clientCertificateChain[0];
+    X509Certificate clientCertificate = clientCertificateChain[0];    
+    String token = request.getHeader("Authorization");
+    if (token == null || token.length() == 0) {
+      return new ResponseEntity<>(String.format("Client Error: Token is invalid."),
+          HttpStatus.NON_AUTHORITATIVE_INFORMATION);
+    }
+    if (token.startsWith("Bearer ")) {
+      token = token.substring(7);
+    }
+    OidcUtils oidcUtils = new OidcUtils();
+    final String ski;
+    try{
+      ski = oidcUtils.getSKI(token);
+    }catch(TokenException te){
+      return new ResponseEntity<>(String.format("Client Error: %s", te.getMessage()),
+          HttpStatus.BAD_REQUEST);
+    }catch(OidcException oe) {
+      return new ResponseEntity<>(String.format("Odic Server Error: %s", oe.getMessage()),
+          HttpStatus.INTERNAL_SERVER_ERROR);
+    }catch(Exception e) {
+      return new ResponseEntity<>(String.format("Internal Server Error: %s", e.getMessage()),
+          HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    HashMap<String, Object> retObj = new HashMap<>();
+    retObj.put("odic.ski", ski);
     OcspUtils ocspUtils = new OcspUtils(env.getProperty("ocsp.cachedDir"));
     try {
-      Principal subjectDN = clientCertificate.getSubjectDN();
+      X500Principal subjectDN = clientCertificate.getSubjectX500Principal();
+      retObj.put("client.cert.subjectDN", subjectDN.getName(X500Principal.CANONICAL));
       Collection<List<?>> sans = clientCertificate.getSubjectAlternativeNames();
       String sanString = "";
       if (sans == null) {
@@ -68,6 +100,7 @@ public class SslClientAuthenticationTestResource {
           }
         }
       }
+      retObj.put("client.cert.SAN", sanString);
       String certStatus = ocspUtils.validate(clientCertificate);
       String statsDesc = ocspUtils.getDescStatus(certStatus);
       HttpStatus httpStats;
@@ -83,9 +116,15 @@ public class SslClientAuthenticationTestResource {
       } else {
         httpStats = HttpStatus.OK;
       }
-      return new ResponseEntity<>(String.format(
-          "Server side received (and validated) the following client certificate:\n\r\t{ Certificate-Info: %s; Certificate-Status: %s; Status-Description: %s; SAN: %s}",
-          subjectDN, certStatus, statsDesc, sanString), httpStats);
+      retObj.put("client.cert.stats", certStatus);
+      retObj.put("client.cert.statsdesc", statsDesc);
+      X500Principal issuer = clientCertificate.getIssuerX500Principal();
+      retObj.put("client.cert.issuer", issuer.getName(X500Principal.CANONICAL));
+      retObj.put("client.cert.notafter", clientCertificate.getNotAfter().toString());
+      retObj.put("client.cert.notbefore", clientCertificate.getNotBefore().toString());
+      Gson gson = new Gson();
+      String jsonString = gson.toJson(retObj);
+      return new ResponseEntity<>(jsonString, httpStats);
     } catch (Exception e) {
       return new ResponseEntity<>(String.format("Internal Server Error: %s", e.getMessage()),
           HttpStatus.INTERNAL_SERVER_ERROR);
