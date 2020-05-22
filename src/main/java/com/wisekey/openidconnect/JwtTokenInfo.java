@@ -1,39 +1,45 @@
 package com.wisekey.openidconnect;
 
+/**
+ * The information in jwt token
+ * @author 
+ *
+ */
 public class JwtTokenInfo {
-	private String iss;
-	private long exp;
-	private long auth_time;
-	private String raw;
-	private String headersRaw;
-	private String claimsRaw;
-	private String signatureRaw;
-	
-	public String getClaimISS() {
-		return this.iss;
-	}
-	
-	/** The "iss" (issuer) claim identifies the principal that issued the JWT */
-	public void setClaimISS(String claimIss) {
-		this.iss = claimIss;
-	}
     
-	public long getExpired() {
-		return this.exp;
-	}
-	
-	public void setExpired(long expire) {
-		this.exp = expire;
-	}
-	
-	public long getAuthenTime() {
-		return this.auth_time;
-	}
-	
-	public void setAuthenTime(long authTime) {
-		this.auth_time = authTime;
-	}
-	
+    /** The "iss" (issuer) claim identifies the principal that issued the JWT */
+    private String iss;
+    private long exp;
+    private long auth_time;
+    private String raw;
+    private String headersRaw;
+    private String claimsRaw;
+    private String signatureRaw;
+    
+    public String getClaimISS() {
+        return this.iss;
+    }
+    
+    public void setClaimISS(String claimIss) {
+        this.iss = claimIss;
+    }
+    
+    public long getExpired() {
+        return this.exp;
+    }
+    
+    public void setExpired(long expire) {
+        this.exp = expire;
+    }
+    
+    public long getAuthenTime() {
+        return this.auth_time;
+    }
+    
+    public void setAuthenTime(long authTime) {
+        this.auth_time = authTime;
+    }
+    
     public String getRaw() {
         return raw;
     }

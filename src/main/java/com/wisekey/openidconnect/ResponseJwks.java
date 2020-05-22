@@ -18,12 +18,6 @@ public class ResponseJwks {
         this.raw = raw;
     }
     
-    public ResponseJwksItem getLastKey() {
-        if (this.keys == null) return null;
-        if (this.keys.isEmpty()) return null;
-        int lastIndex = this.keys.size();
-        return this.keys.get(lastIndex - 1);
-    }
     public ResponseJwksItem getLastSignKey() {
         if (this.keys == null) return null;
         if (this.keys.isEmpty()) return null;

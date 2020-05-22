@@ -31,6 +31,7 @@ public class SslClientAuthenticationTestResource {
 
   private final HttpServletRequest request;
   private final Environment env;
+  private static final String BEARER = "Bearer ";
 
   @Inject
   public SslClientAuthenticationTestResource(HttpServletRequest request, Environment env) {
@@ -45,12 +46,13 @@ public class SslClientAuthenticationTestResource {
         .getAttribute("javax.servlet.request.X509Certificate");
     X509Certificate clientCertificate = clientCertificateChain[0];    
     String token = request.getHeader("Authorization");
-    if (token == null || token.length() == 0) {
+    String tmpTk = token.toLowerCase();
+    if (tmpTk == null || tmpTk.length() <= BEARER.length()) {
       return new ResponseEntity<>(String.format("Client Error: Token is invalid."),
           HttpStatus.NON_AUTHORITATIVE_INFORMATION);
     }
-    if (token.startsWith("Bearer ")) {
-      token = token.substring(7);
+    if (tmpTk.startsWith(BEARER)) {
+      token = token.substring(BEARER.length());
     }
     OidcUtils oidcUtils = new OidcUtils();
     final String ski;
