@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 public class ResponseJwksItem {
     private String n;
     private String e;
+    private String use;
     
     public String getN() {
         return this.n;
@@ -40,5 +41,13 @@ public class ResponseJwksItem {
         } catch (Exception e) {
             return null;
         }
-    }    
+    }
+
+    public String getUse() {
+        return use;
+    }
+
+    public void setUse(String use) {
+        this.use = use;
+    }
 }

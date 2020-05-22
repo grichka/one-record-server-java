@@ -129,41 +129,11 @@ public class OidcUtils {
         }
     }
     
-    public boolean validateJwtToken(final JwtTokenInfo token, final PublicKey publicKey, final String issuer) throws OidcException {
-        if (token == null){
-            throw new OidcException("Token is invalid format");
-        }
-        if (publicKey == null){
-            throw new OidcException("Token is invalid format");
-        }
-        if (isStringEmpty(token.getSignatureRaw())){
-            throw new OidcException("Token is invalid format");
-        }
-        final long currentTS = getCurrentTimeStamp();
-        if (currentTS < token.getAuthenTime() || currentTS > token.getExpired() ) {
-            throw new OidcException("Token is expired");
-        }
-        if ((!isStringEmpty(issuer)) && (!issuer.equals(token.getClaimISS()))) {
-            throw new OidcException("Issuer is invalide");
-        }
-        try {
-            // Decode the signature we got from the server
-            final byte[] jwtExpectedSig = base64UrlDecode(token.getSignatureRaw());
-            // Validate the signature.
-            final Signature sig = Signature.getInstance(JWT_ALGORITHM);
-            sig.initVerify(publicKey);
-            sig.update(new String(token.getHeadersRaw() + "." + token.getClaimsRaw()).getBytes());
-            return sig.verify(jwtExpectedSig);
-        } catch (final Exception ex) {
-            throw new OidcException("Token is invalid", ex);
-        }
-    }
-
     public String getSKI(final String token)
             throws InvalidKeySpecException, NoSuchAlgorithmException, OidcException, TokenException {
         // Get token info
         final JwtTokenInfo jwtInfo = getJwtTokenInfo(token);
-        if (jwtInfo == null) {
+        if (jwtInfo == null || validateToken(jwtInfo)) {
             throw new TokenException("Token is invalid format.");
         }
         return getSKI(jwtInfo);
@@ -176,32 +146,33 @@ public class OidcUtils {
         }
         final DiscoveryDocument disDoc = getDiscoveryDocument(jwtInfo.getClaimISS());
         if (disDoc == null) {
-            throw new OidcException("Token is invalid format");
+            throw new TokenException("Token is invalid format.");
         }
         if (isStringEmpty(disDoc.getJwksUri())){
-            throw new OidcException("Token is invalid format");
+            throw new TokenException("Token is invalid format.");
         }
         final ResponseJwks response = getJwksInfo(disDoc.getJwksUri());
         if (response == null) {
-            throw new OidcException("Token is invalid format");
+            throw new OidcException("Could not request to odic server.");
         }
-        final ResponseJwksItem last = response.getLastKey();
+        final ResponseJwksItem last = response.getLastSignKey();
         if (last == null) {
-            throw new OidcException("Token is invalid format");
+            throw new OidcException("Not found signing public key.");
         }
         final String n = last.getN();
         if (isStringEmpty(n)) {
-            throw new OidcException("Token is invalid format");
+            throw new OidcException("Signing public key is invalid format.");
         }
         final String e = last.getE();
         if (isStringEmpty(e)) {
-            throw new OidcException("Token is invalid format");
+            throw new OidcException("Signing public key is invalid format.");
         }
         // Get public key
         final BigInteger modulus = new BigInteger(1, base64UrlDecode(n));
         final BigInteger publicExponent = new BigInteger(1, base64UrlDecode(e));
         final RSAPublicKeySpec publicKeySpec = new RSAPublicKeySpec(modulus, publicExponent);
         final PublicKey publicKey = KeyFactory.getInstance("RSA").generatePublic(publicKeySpec);
+        verifySignature(jwtInfo, publicKey);
         // Return Subject Key Identifier with hex format
         return getSKI(publicKey);
     }
@@ -344,7 +315,32 @@ public class OidcUtils {
         final T data = converter.fromJson(jsonString, targetType);
         return data;
     }
+
+    private boolean validateToken(JwtTokenInfo token) {
+        if (isStringEmpty(token.getSignatureRaw())){
+            return false;
+        }
+        final long currentTS = getCurrentTimeStamp();
+        if (currentTS < token.getAuthenTime() || currentTS > token.getExpired() ) {
+            return false;
+        }
+        return true;
+    }
     
+    private boolean verifySignature(final JwtTokenInfo token, final PublicKey publicKey) throws TokenException {
+        try {
+            // Decode the signature we got from the server
+            final byte[] jwtExpectedSig = base64UrlDecode(token.getSignatureRaw());
+            // Validate the signature.
+            final Signature sig = Signature.getInstance(JWT_ALGORITHM);
+            sig.initVerify(publicKey);
+            sig.update(new String(token.getHeadersRaw() + "." + token.getClaimsRaw()).getBytes());
+            return sig.verify(jwtExpectedSig);
+        } catch (final Exception ex) {
+            throw new TokenException("Signature is mismatch.", ex);
+        }
+    }
+
     private long getCurrentTimeStamp() {
         //TimeZone.setDefault(TimeZone.getTimeZone("Etc/UTC"));
         final Instant instant = Instant.now();
@@ -378,5 +374,5 @@ public class OidcUtils {
             hexStringBuffer.append(byteToHex(byteArray[i]));
         }
         return hexStringBuffer.toString();
-    }    
+    }
 }
