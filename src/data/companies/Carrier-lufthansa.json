@@ -1,0 +1,66 @@
+{
+  "@type": ["https://onerecord.iata.org/CompanyInformation"],
+  "https://onerecord.iata.org/CompanyInformation#companyId": "lufthansa",
+  "https://onerecord.iata.org/CompanyInformation#company": {
+    "@type": ["https://onerecord.iata.org/Company"],
+    "https://onerecord.iata.org/Company#airlineCode": "LH",
+    "https://onerecord.iata.org/Company#airlinePrefix": "220",
+    "https://onerecord.iata.org/Company#branch": {
+      "@type": ["https://onerecord.iata.org/Branch"],
+      "https://onerecord.iata.org/Branch#branchName": "Lufthansa Cargo",
+      "https://onerecord.iata.org/Branch#contactPerson": [
+        {
+          "@type": ["https://onerecord.iata.org/Person"],
+          "contact": [
+            {
+              "@type": ["https://onerecord.iata.org/Contact"],
+              "https://onerecord.iata.org/Contact#emailAddress": "pschmidt@lufthansa.com",
+              "other": {
+                "@type": ["https://onerecord.iata.org/ContactOther"],
+                "https://onerecord.iata.org/ContactOther#detail": "ONE Record email"
+              },
+              "https://onerecord.iata.org/Contact#phoneNumber": "0034146464646"
+            }
+          ],
+          "https://onerecord.iata.org/Person#department": "Export Department"
+        }
+      ],
+      "https://onerecord.iata.org/Branch#iATACargoAgentLocationIdentifier": 0,
+      "https://onerecord.iata.org/Branch#location": {
+        "@type": ["https://onerecord.iata.org/Location"],
+        "https://onerecord.iata.org/Location#address": {
+          "@type": ["https://onerecord.iata.org/Address"],
+          "https://onerecord.iata.org/Address#cityCode": "FRA",
+          "https://onerecord.iata.org/Address#cityName": "FRANKFURT",
+          "https://onerecord.iata.org/Address#country": {
+            "@type": ["https://onerecord.iata.org/Country"],
+            "https://onerecord.iata.org/Country#countryCode": "DE",
+            "https://onerecord.iata.org/Country#countryName": "GERMANY"
+          },
+          "https://onerecord.iata.org/Address#postalCode": "60546",
+          "https://onerecord.iata.org/Address#regionCode": "",
+          "https://onerecord.iata.org/Address#regionName": "",
+          "https://onerecord.iata.org/Address#street": [
+            "Frankfurter Flughafen (FRA), 451"
+          ]
+        },
+        "https://onerecord.iata.org/Location#locationName": "Cargo Center",
+        "https://onerecord.iata.org/Location#locationType": "Warehouse"
+      }
+    },
+    "https://onerecord.iata.org/Company#companyName": "Lufthansa Cargo"
+  },
+  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://thomasmoreau.fr:8080/companies/lufthansa",
+  "https://onerecord.iata.org/CompanyInformation#supportedContentTypes": [
+    "application/ld+json"
+  ],
+  "https://onerecord.iata.org/CompanyInformation#supportedLogisticsObjects": [
+    "https://onerecord.iata.org/Waybill",
+    "https://onerecord.iata.org/Shipment",
+    "https://onerecord.iata.org/Booking",
+    "https://onerecord.iata.org/Piece",
+    "https://onerecord.iata.org/Item",
+    "https://onerecord.iata.org/Product",
+    "https://onerecord.iata.org/ServiceRequest"
+  ]
+}

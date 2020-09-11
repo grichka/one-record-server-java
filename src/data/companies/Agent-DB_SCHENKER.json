@@ -1,0 +1,65 @@
+{
+  "@type": ["https://onerecord.iata.org/CompanyInformation"],
+  "https://onerecord.iata.org/CompanyInformation#companyId": "dbschenker",
+  "https://onerecord.iata.org/CompanyInformation#company": {
+    "@type": ["https://onerecord.iata.org/Company"],
+    "https://onerecord.iata.org/Company#iataCargoAgentCode": "6786447",
+    "https://onerecord.iata.org/Company#branch": {
+      "@type": ["https://onerecord.iata.org/Branch"],
+      "https://onerecord.iata.org/Branch#branchName": "DB SCHENKER FRA",
+      "https://onerecord.iata.org/Branch#contactPerson": [
+        {
+          "@type": ["https://onerecord.iata.org/Person"],
+          "contact": [
+            {
+              "@type": ["https://onerecord.iata.org/Contact"],
+              "https://onerecord.iata.org/Contact#emailAddress": "klaas@dbschenker.com",
+              "other": {
+                "@type": ["https://onerecord.iata.org/ContactOther"],
+                "https://onerecord.iata.org/ContactOther#detail": "ONE Record email"
+              },
+              "https://onerecord.iata.org/Contact#phoneNumber": "0034146564647"
+            }
+          ],
+          "https://onerecord.iata.org/Person#department": "AIR FREIGHT DEPARTMENT"
+        }
+      ],
+      "https://onerecord.iata.org/Branch#iATACargoAgentLocationIdentifier": 0,
+      "https://onerecord.iata.org/Branch#location": {
+        "@type": ["https://onerecord.iata.org/Location"],
+        "https://onerecord.iata.org/Location#address": {
+          "@type": ["https://onerecord.iata.org/Address"],
+          "https://onerecord.iata.org/Address#cityCode": "FRA",
+          "https://onerecord.iata.org/Address#cityName": "FRANKFURT",
+          "https://onerecord.iata.org/Address#country": {
+            "@type": ["https://onerecord.iata.org/Country"],
+            "https://onerecord.iata.org/Country#countryCode": "DE",
+            "https://onerecord.iata.org/Country#countryName": "GERMANY"
+          },
+          "https://onerecord.iata.org/Address#postalCode": "60549",
+          "https://onerecord.iata.org/Address#regionCode": "",
+          "https://onerecord.iata.org/Address#regionName": "",
+          "https://onerecord.iata.org/Address#street": [
+            "FLUGHAFEN CARGOCITY SUD, GEBAUDE 529"
+          ]
+        },
+        "https://onerecord.iata.org/Location#locationName": "FRA Facilitie",
+        "https://onerecord.iata.org/Location#locationType": "Warehouse"
+      }
+    },
+    "https://onerecord.iata.org/Company#companyName": "BOLLORE"
+  },
+  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://onerecord.fr:8080/companies/dbschenker",
+  "https://onerecord.iata.org/CompanyInformation#supportedContentTypes": [
+    "application/ld+json"
+  ],
+  "https://onerecord.iata.org/CompanyInformation#supportedLogisticsObjects": [
+    "https://onerecord.iata.org/Waybill",
+    "https://onerecord.iata.org/Shipment",
+    "https://onerecord.iata.org/Booking",
+    "https://onerecord.iata.org/Piece",
+    "https://onerecord.iata.org/Item",
+    "https://onerecord.iata.org/Product",
+    "https://onerecord.iata.org/ServiceRequest"
+  ]
+}

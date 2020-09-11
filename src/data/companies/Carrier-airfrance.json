@@ -1,0 +1,64 @@
+{
+  "@type": ["https://onerecord.iata.org/CompanyInformation"],
+  "https://onerecord.iata.org/CompanyInformation#companyId": "airfrance",
+  "https://onerecord.iata.org/CompanyInformation#company": {
+    "@type": ["https://onerecord.iata.org/Company"],
+    "https://onerecord.iata.org/Company#airlineCode": "AF",
+    "https://onerecord.iata.org/Company#airlinePrefix": "057",
+    "https://onerecord.iata.org/Company#branch": {
+      "@type": ["https://onerecord.iata.org/Branch"],
+      "https://onerecord.iata.org/Branch#branchName": "CDG G1XL Warehouse",
+      "https://onerecord.iata.org/Branch#contactPerson": [
+        {
+          "@type": ["https://onerecord.iata.org/Person"],
+          "contact": [
+            {
+              "@type": ["https://onerecord.iata.org/Contact"],
+              "https://onerecord.iata.org/Contact#emailAddress": "martin.dupont@airfrance.fr",
+              "other": {
+                "@type": ["https://onerecord.iata.org/ContactOther"],
+                "https://onerecord.iata.org/ContactOther#detail": "ONE Record email"
+              },
+              "https://onerecord.iata.org/Contact#phoneNumber": "0033146464646"
+            }
+          ],
+          "https://onerecord.iata.org/Person#department": "Export Department"
+        }
+      ],
+      "https://onerecord.iata.org/Branch#iATACargoAgentLocationIdentifier": 0,
+      "https://onerecord.iata.org/Branch#location": {
+        "@type": ["https://onerecord.iata.org/Location"],
+        "https://onerecord.iata.org/Location#address": {
+          "@type": ["https://onerecord.iata.org/Address"],
+          "https://onerecord.iata.org/Address#cityCode": "PAR",
+          "https://onerecord.iata.org/Address#cityName": "Paris",
+          "https://onerecord.iata.org/Address#country": {
+            "@type": ["https://onerecord.iata.org/Country"],
+            "https://onerecord.iata.org/Country#countryCode": "FR",
+            "https://onerecord.iata.org/Country#countryName": "France"
+          },
+          "https://onerecord.iata.org/Address#postalCode": "95700",
+          "https://onerecord.iata.org/Address#regionCode": "",
+          "https://onerecord.iata.org/Address#regionName": "",
+          "https://onerecord.iata.org/Address#street": ["12 Rue du Tarteret"]
+        },
+        "https://onerecord.iata.org/Location#locationName": "G1XL",
+        "https://onerecord.iata.org/Location#locationType": "Warehouse"
+      }
+    },
+    "https://onerecord.iata.org/Company#companyName": "Air France CDG"
+  },
+  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://thomasmoreau.fr:8080/companies/airfrance",
+  "https://onerecord.iata.org/CompanyInformation#supportedContentTypes": [
+    "application/ld+json"
+  ],
+  "https://onerecord.iata.org/CompanyInformation#supportedLogisticsObjects": [
+    "https://onerecord.iata.org/Waybill",
+    "https://onerecord.iata.org/Shipment",
+    "https://onerecord.iata.org/Booking",
+    "https://onerecord.iata.org/Piece",
+    "https://onerecord.iata.org/Item",
+    "https://onerecord.iata.org/Product",
+    "https://onerecord.iata.org/ServiceRequest"
+  ]
+}

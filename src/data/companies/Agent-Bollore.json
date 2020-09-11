@@ -1,0 +1,63 @@
+{
+  "@type": ["https://onerecord.iata.org/CompanyInformation"],
+  "https://onerecord.iata.org/CompanyInformation#companyId": "bollore",
+  "https://onerecord.iata.org/CompanyInformation#company": {
+    "@type": ["https://onerecord.iata.org/Company"],
+    "https://onerecord.iata.org/Company#iataCargoAgentCode": "7046054",
+    "https://onerecord.iata.org/Company#branch": {
+      "@type": ["https://onerecord.iata.org/Branch"],
+      "https://onerecord.iata.org/Branch#branchName": "BOLLORE LOGISTICS CDG",
+      "https://onerecord.iata.org/Branch#contactPerson": [
+        {
+          "@type": ["https://onerecord.iata.org/Person"],
+          "contact": [
+            {
+              "@type": ["https://onerecord.iata.org/Contact"],
+              "https://onerecord.iata.org/Contact#emailAddress": "jmartin@Bollore.com",
+              "other": {
+                "@type": ["https://onerecord.iata.org/ContactOther"],
+                "https://onerecord.iata.org/ContactOther#detail": "ONE Record email"
+              },
+              "https://onerecord.iata.org/Contact#phoneNumber": "0033146464647"
+            }
+          ],
+          "https://onerecord.iata.org/Person#department": "AIR FREIGHT DEPARTMENT"
+        }
+      ],
+      "https://onerecord.iata.org/Branch#iATACargoAgentLocationIdentifier": 0,
+      "https://onerecord.iata.org/Branch#location": {
+        "@type": ["https://onerecord.iata.org/Location"],
+        "https://onerecord.iata.org/Location#address": {
+          "@type": ["https://onerecord.iata.org/Address"],
+          "https://onerecord.iata.org/Address#cityCode": "PAR",
+          "https://onerecord.iata.org/Address#cityName": "PARIS",
+          "https://onerecord.iata.org/Address#country": {
+            "@type": ["https://onerecord.iata.org/Country"],
+            "https://onerecord.iata.org/Country#countryCode": "FR",
+            "https://onerecord.iata.org/Country#countryName": "FRANCE"
+          },
+          "https://onerecord.iata.org/Address#postalCode": "95700",
+          "https://onerecord.iata.org/Address#regionCode": "",
+          "https://onerecord.iata.org/Address#regionName": "",
+          "https://onerecord.iata.org/Address#street": ["RUE DES 2 CEDRES"]
+        },
+        "https://onerecord.iata.org/Location#locationName": "Cargo Center",
+        "https://onerecord.iata.org/Location#locationType": "Warehouse"
+      }
+    },
+    "https://onerecord.iata.org/Company#companyName": "BOLLORE"
+  },
+  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://onerecord.fr:8080/companies/bollore",
+  "https://onerecord.iata.org/CompanyInformation#supportedContentTypes": [
+    "application/ld+json"
+  ],
+  "https://onerecord.iata.org/CompanyInformation#supportedLogisticsObjects": [
+    "https://onerecord.iata.org/Waybill",
+    "https://onerecord.iata.org/Shipment",
+    "https://onerecord.iata.org/Booking",
+    "https://onerecord.iata.org/Piece",
+    "https://onerecord.iata.org/Item",
+    "https://onerecord.iata.org/Product",
+    "https://onerecord.iata.org/ServiceRequest"
+  ]
+}
