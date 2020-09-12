@@ -1,0 +1,89 @@
+{
+  "@id": "http://localhost:8080/companies/sanofi/los/Piece_0000001",
+  "@type": [
+    "https://onerecord.iata.org/Piece",
+    "https://onerecord.iata.org/LogisticsObject"
+  ],
+  "https://onerecord.iata.org/Piece#coload": true,
+  "https://onerecord.iata.org/Piece#product": {
+    "@id": "http://onerecord.fr:8083/companies/airfrance/los/Product_443695",
+    "@type": [
+      "https://onerecord.iata.org/Product",
+      "https://onerecord.iata.org/LogisticsObject"
+    ]
+  },
+  "https://onerecord.iata.org/Piece#stackable": true,
+  "https://onerecord.iata.org/Piece#dimensions": {
+    "@id": "_:742093363",
+    "@type": ["https://onerecord.iata.org/Dimensions"],
+    "https://onerecord.iata.org/Dimensions#volume": {
+      "@id": "_:1355983876",
+      "@type": ["https://onerecord.iata.org/Value"],
+      "https://onerecord.iata.org/Value#value": "1",
+      "https://onerecord.iata.org/Value#unit": "m3"
+    },
+    "https://onerecord.iata.org/Dimensions#height": {
+      "@id": "_:452000889",
+      "@type": ["https://onerecord.iata.org/Value"],
+      "https://onerecord.iata.org/Value#value": "100",
+      "https://onerecord.iata.org/Value#unit": "cm"
+    },
+    "https://onerecord.iata.org/Dimensions#length": {
+      "@id": "_:975525343",
+      "@type": ["https://onerecord.iata.org/Value"],
+      "https://onerecord.iata.org/Value#value": "100",
+      "https://onerecord.iata.org/Value#unit": "cm"
+    },
+    "https://onerecord.iata.org/Dimensions#width": {
+      "@id": "_:1048207485",
+      "@type": ["https://onerecord.iata.org/Value"],
+      "https://onerecord.iata.org/Value#value": "100",
+      "https://onerecord.iata.org/Value#unit": "cm"
+    }
+  },
+  "https://onerecord.iata.org/Piece#grossWeight": {
+    "@id": "_:8024814",
+    "@type": ["https://onerecord.iata.org/Value"],
+    "https://onerecord.iata.org/Value#value": "600",
+    "https://onerecord.iata.org/Value#unit": "kg"
+  },
+  "https://onerecord.iata.org/Piece#externalReference": [
+    {
+      "@id": "http://onerecord.fr:8082/companies/bollore/los/Waybill_266895",
+      "@type": ["https://onerecord.iata.org/ExternalReference"],
+      "https://onerecord.iata.org/ExternalReference#documentType": "https://onerecord.iata.org/Waybill",
+      "https://onerecord.iata.org/ExternalReference#documentName": "AirWaybill",
+      "https://onerecord.iata.org/ExternalReference#documentID": "http://onerecord.fr:8082/companies/bollore/los/Waybill_266895",
+      "https://onerecord.iata.org/ExternalReference#documentVersion": "1.0"
+    }
+  ],
+  "https://onerecord.iata.org/Piece#slac": 30000,
+  "https://onerecord.iata.org/Piece#securityStatus": {
+    "@id": "_:1149423",
+    "@type": [
+      "https://onerecord.iata.org/SecurityStatus",
+      "https://onerecord.iata.org/LogisticsObject"
+    ],
+    "https://onerecord.iata.org/SecurityStatus#issuedOn": 1599922108030,
+    "https://onerecord.iata.org/SecurityStatus#statusCode": "SPX",
+    "https://onerecord.iata.org/LogisticsObject#companyIdentifier": "http://onerecord.fr:8082/companies/bollore",
+    "https://onerecord.iata.org/SecurityStatus#regulatedPartyType": "Bollore",
+    "https://onerecord.iata.org/SecurityStatus#regulatingAuthority": "Bollore CDG"
+  },
+  "https://onerecord.iata.org/LogisticsObject#companyIdentifier": "http://onerecord.fr:8082/companies/bollore",
+  "https://onerecord.iata.org/Piece#productionCountry": [
+    {
+      "@id": "_:1186891221",
+      "@type": ["https://onerecord.iata.org/Country"],
+      "https://onerecord.iata.org/Country#countryName": "France",
+      "https://onerecord.iata.org/Country#countryCode": "FR"
+    }
+  ],
+  "https://onerecord.iata.org/Piece#upid": "3564789",
+  "https://onerecord.iata.org/Piece#shipper": {
+    "@id": "https://onerecord:8081/companies/sanofi",
+    "@type": ["https://onerecord.iata.org/Company"]
+  },
+  "https://onerecord.iata.org/Piece#goodsDescription": "COVID19 Vaccines +2 +8",
+  "https://onerecord.iata.org/Piece#turnable": true
+}

@@ -1,0 +1,23 @@
+{
+  "@type": ["https://onerecord.iata.org/Product"],
+  "https://onerecord.iata.org/LogisticsObject#companyIdentifier": "airfrance",
+  "https://onerecord.iata.org/LogisticsObject#event": [],
+  "https://onerecord.iata.org/Product#characteristics": [],
+  "https://onerecord.iata.org/Product#commodityCode": "PHAR",
+  "https://onerecord.iata.org/Product#commodityDescription": "PHARMACEUTICALS +2 +8",
+  "https://onerecord.iata.org/Product#commodityName": "VACCINES",
+  "https://onerecord.iata.org/Product#commodityType": "string",
+  "https://onerecord.iata.org/Product#manufacturer": {
+    "@type": ["https://onerecord.iata.org/Company"],
+    "https://onerecord.iata.org/Company#airlineCode": "AF",
+    "https://onerecord.iata.org/Company#airlinePrefix": "057",
+    "https://onerecord.iata.org/Company#companyName": "string",
+    "https://onerecord.iata.org/Company#iataCargoAgentCode": 0,
+    "id": "string"
+  },
+  "https://onerecord.iata.org/Product#otherIdentifier": [],
+  "https://onerecord.iata.org/Product#productDescription": "Vaccines",
+  "https://onerecord.iata.org/Product#productIdentifier": "covidvac",
+  "https://onerecord.iata.org/Product#unNumber": "",
+  "id": "covidvac"
+}

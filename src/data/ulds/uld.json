@@ -1,0 +1,123 @@
+{
+  "@type": ["https://onerecord.iata.org/ULD"],
+  "https://onerecord.iata.org/LogisticsObject#companyIdentifier": "string",
+  "https://onerecord.iata.org/LogisticsObject#event": [],
+  "https://onerecord.iata.org/ULD#ataDesignator": "string",
+  "https://onerecord.iata.org/ULD#contour": "string",
+  "https://onerecord.iata.org/ULD#deckPosition": "string",
+  "https://onerecord.iata.org/ULD#externalReference": [],
+  "https://onerecord.iata.org/ULD#loadingIndicator": "string",
+  "https://onerecord.iata.org/ULD#ownerCode": "string",
+  "https://onerecord.iata.org/ULD#ownerCodeIssuer": "string",
+  "https://onerecord.iata.org/ULD#ownerCompany": {
+    "@type": ["https://onerecord.iata.org/Company"],
+    "id": "string"
+  },
+  "https://onerecord.iata.org/ULD#serialNumber": "string",
+  "https://onerecord.iata.org/ULD#tareWeight": {
+    "@type": ["https://onerecord.iata.org/Value"],
+    "https://onerecord.iata.org/Value#unit": "string",
+    "https://onerecord.iata.org/Value#value": 0,
+    "id": "string"
+  },
+  "https://onerecord.iata.org/ULD#transportSegment": [],
+  "https://onerecord.iata.org/ULD#uldType": "string",
+  "https://onerecord.iata.org/ULD#upid": {
+    "@type": ["https://onerecord.iata.org/Piece"],
+    "https://onerecord.iata.org/LogisticsObject#companyIdentifier": "string",
+    "https://onerecord.iata.org/LogisticsObject#event": [],
+    "https://onerecord.iata.org/Piece#additionalSecurityInfo": ["string"],
+    "https://onerecord.iata.org/Piece#coload": true,
+    "https://onerecord.iata.org/Piece#containedPiece": [null],
+    "https://onerecord.iata.org/Piece#dimensions": {
+      "@type": ["https://onerecord.iata.org/Dimensions"],
+      "https://onerecord.iata.org/Dimensions#height": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "string",
+        "https://onerecord.iata.org/Value#value": 0,
+        "id": "string"
+      },
+      "https://onerecord.iata.org/Dimensions#length": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "string",
+        "https://onerecord.iata.org/Value#value": 0,
+        "id": "string"
+      },
+      "https://onerecord.iata.org/Dimensions#volume": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "string",
+        "https://onerecord.iata.org/Value#value": 0,
+        "id": "string"
+      },
+      "https://onerecord.iata.org/Dimensions#width": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "string",
+        "https://onerecord.iata.org/Value#value": 0,
+        "id": "string"
+      },
+      "id": "string"
+    },
+    "https://onerecord.iata.org/Piece#externalReference": [
+      {
+        "@type": ["https://onerecord.iata.org/ExternalReference"],
+        "id": "string"
+      }
+    ],
+    "https://onerecord.iata.org/Piece#goodsDescription": "string",
+    "https://onerecord.iata.org/Piece#grossWeight": {
+      "@type": ["https://onerecord.iata.org/Value"],
+      "https://onerecord.iata.org/Value#unit": "string",
+      "https://onerecord.iata.org/Value#value": 0,
+      "id": "string"
+    },
+    "https://onerecord.iata.org/Piece#loadType": "string",
+    "https://onerecord.iata.org/Piece#product": {
+      "@type": ["https://onerecord.iata.org/Product"],
+      "id": "string"
+    },
+    "https://onerecord.iata.org/Piece#productionCountry": [
+      {
+        "@type": ["https://onerecord.iata.org/Country"],
+        "https://onerecord.iata.org/Country#countryCode": "string",
+        "https://onerecord.iata.org/Country#countryName": "string",
+        "id": "string"
+      }
+    ],
+    "https://onerecord.iata.org/Piece#shipper": {
+      "@type": ["https://onerecord.iata.org/Company"],
+      "id": "string"
+    },
+    "https://onerecord.iata.org/Piece#slac": 0,
+    "https://onerecord.iata.org/Piece#specialHandling": [
+      {
+        "@type": ["https://onerecord.iata.org/SpecialHandling"],
+        "https://onerecord.iata.org/LogisticsObject#companyIdentifier": "string",
+        "https://onerecord.iata.org/LogisticsObject#event": [],
+        "https://onerecord.iata.org/SpecialHandling#code": "string",
+        "id": "string"
+      }
+    ],
+    "https://onerecord.iata.org/Piece#stackable": true,
+    "https://onerecord.iata.org/Piece#transportSegment": [null],
+    "https://onerecord.iata.org/Piece#turnable": true,
+    "https://onerecord.iata.org/Piece#upid": "string",
+    "https://onerecord.iata.org/Piece#volumetricWeight": {
+      "@type": ["https://onerecord.iata.org/VolumetricWeight"],
+      "https://onerecord.iata.org/VolumetricWeight#chargeableWeight": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "string",
+        "https://onerecord.iata.org/Value#value": 0,
+        "id": "string"
+      },
+      "https://onerecord.iata.org/VolumetricWeight#conversionFactor": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "string",
+        "https://onerecord.iata.org/Value#value": 0,
+        "id": "string"
+      },
+      "id": "string"
+    },
+    "id": "uld1"
+  },
+  "id": "uld1"
+}

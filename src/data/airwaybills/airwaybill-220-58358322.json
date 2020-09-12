@@ -1,0 +1,9 @@
+{
+  "@type": ["https://onerecord.iata.org/Waybill"],
+  "https://onerecord.iata.org/LogisticsObject#companyIdentifier": "6786447",
+  "https://onerecord.iata.org/LogisticsObject#event": [],
+  "https://onerecord.iata.org/Waybill#containedWaybill": [null],
+  "https://onerecord.iata.org/Waybill#waybillNumber": "220-58358322",
+  "https://onerecord.iata.org/Waybill#waybillType": "AirWaybill",
+  "id": "220-58358322"
+}

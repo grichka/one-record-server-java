@@ -325,8 +325,8 @@
     }
   ],
   "https://onerecord.iata.org/Product#commodityCode": "PHAR",
-  "https://onerecord.iata.org/Product#commodityDescription": "COVID-19 VACCINES",
-  "https://onerecord.iata.org/Product#commodityName": "VACCINES",
+  "https://onerecord.iata.org/Product#commodityDescription": "PHARMACEUTICALS 2-8",
+  "https://onerecord.iata.org/Product#commodityName": "???",
   "https://onerecord.iata.org/Product#commodityType": "string",
   "https://onerecord.iata.org/Product#manufacturer": {
     "@type": ["https://onerecord.iata.org/Company"],

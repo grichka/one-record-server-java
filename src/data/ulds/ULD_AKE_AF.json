@@ -1,0 +1,132 @@
+{
+  "@type": ["https://onerecord.iata.org/ULD"],
+  "https://onerecord.iata.org/LogisticsObject#companyIdentifier": "airfrance",
+  "https://onerecord.iata.org/LogisticsObject#event": [],
+  "https://onerecord.iata.org/ULD#ataDesignator": "LD-26",
+  "https://onerecord.iata.org/ULD#contour": "F",
+  "https://onerecord.iata.org/ULD#deckPosition": "12",
+  "https://onerecord.iata.org/ULD#externalReference": [],
+  "https://onerecord.iata.org/ULD#loadingIndicator": "string",
+  "https://onerecord.iata.org/ULD#ownerCode": "AF",
+  "https://onerecord.iata.org/ULD#ownerCodeIssuer": "string",
+  "https://onerecord.iata.org/ULD#ownerCompany": {
+    "@type": ["https://onerecord.iata.org/Company"],
+    "id": "http://onerecord.fr:8083/companies/airfrance"
+  },
+  "https://onerecord.iata.org/ULD#serialNumber": "1334",
+  "https://onerecord.iata.org/ULD#tareWeight": {
+    "@type": ["https://onerecord.iata.org/Value"],
+    "https://onerecord.iata.org/Value#unit": "75",
+    "https://onerecord.iata.org/Value#value": 0,
+    "id": "string"
+  },
+  "https://onerecord.iata.org/ULD#transportSegment": [],
+  "https://onerecord.iata.org/ULD#uldType": "AKE",
+  "https://onerecord.iata.org/ULD#upid": {
+    "@type": ["https://onerecord.iata.org/Piece"],
+    "https://onerecord.iata.org/LogisticsObject#companyIdentifier": "airfrance",
+    "https://onerecord.iata.org/LogisticsObject#event": [],
+    "https://onerecord.iata.org/Piece#additionalSecurityInfo": ["SPX"],
+    "https://onerecord.iata.org/Piece#coload": true,
+    "https://onerecord.iata.org/Piece#containedPiece": [
+      {
+        "@type": "https://onerecord.iata.org/Piece",
+        "id": "http://onerecord.fr:8081/companies/sanofi/los/Piece_203158"
+      },
+      {
+        "@type": "https://onerecord.iata.org/Piece",
+        "id": "http://onerecord.fr:8081/companies/sanofi/los/Piece_521225"
+      }
+    ],
+    "https://onerecord.iata.org/Piece#dimensions": {
+      "@type": ["https://onerecord.iata.org/Dimensions"],
+      "https://onerecord.iata.org/Dimensions#height": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "cm",
+        "https://onerecord.iata.org/Value#value": 162.6,
+        "id": "string"
+      },
+      "https://onerecord.iata.org/Dimensions#length": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "cm",
+        "https://onerecord.iata.org/Value#value": 153.4,
+        "id": "string"
+      },
+      "https://onerecord.iata.org/Dimensions#volume": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "m3",
+        "https://onerecord.iata.org/Value#value": 4.5,
+        "id": "string"
+      },
+      "https://onerecord.iata.org/Dimensions#width": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "cm",
+        "https://onerecord.iata.org/Value#value": 200.7,
+        "id": "string"
+      },
+      "id": "string"
+    },
+    "https://onerecord.iata.org/Piece#externalReference": [
+      {
+        "@type": ["https://onerecord.iata.org/ExternalReference"],
+        "id": "string"
+      }
+    ],
+    "https://onerecord.iata.org/Piece#goodsDescription": "COVID19 Vaccines +2 +8",
+    "https://onerecord.iata.org/Piece#grossWeight": {
+      "@type": ["https://onerecord.iata.org/Value"],
+      "https://onerecord.iata.org/Value#unit": "kg",
+      "https://onerecord.iata.org/Value#value": 82,
+      "id": "string"
+    },
+    "https://onerecord.iata.org/Piece#loadType": "string",
+    "https://onerecord.iata.org/Piece#product": {
+      "@type": ["https://onerecord.iata.org/Product"],
+      "id": "string"
+    },
+    "https://onerecord.iata.org/Piece#productionCountry": [
+      {
+        "@type": ["https://onerecord.iata.org/Country"],
+        "https://onerecord.iata.org/Country#countryCode": "FR",
+        "https://onerecord.iata.org/Country#countryName": "FRANCE",
+        "id": "string"
+      }
+    ],
+    "https://onerecord.iata.org/Piece#shipper": {
+      "@type": ["https://onerecord.iata.org/Company"],
+      "id": "sanofi"
+    },
+    "https://onerecord.iata.org/Piece#slac": 0,
+    "https://onerecord.iata.org/Piece#specialHandling": [
+      {
+        "@type": ["https://onerecord.iata.org/SpecialHandling"],
+        "https://onerecord.iata.org/LogisticsObject#companyIdentifier": "airfrance",
+        "https://onerecord.iata.org/LogisticsObject#event": [],
+        "https://onerecord.iata.org/SpecialHandling#code": "COL MON ULD",
+        "id": "string"
+      }
+    ],
+    "https://onerecord.iata.org/Piece#stackable": true,
+    "https://onerecord.iata.org/Piece#transportSegment": [null],
+    "https://onerecord.iata.org/Piece#turnable": true,
+    "https://onerecord.iata.org/Piece#upid": "string",
+    "https://onerecord.iata.org/Piece#volumetricWeight": {
+      "@type": ["https://onerecord.iata.org/VolumetricWeight"],
+      "https://onerecord.iata.org/VolumetricWeight#chargeableWeight": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "kg",
+        "https://onerecord.iata.org/Value#value": 750,
+        "id": "string"
+      },
+      "https://onerecord.iata.org/VolumetricWeight#conversionFactor": {
+        "@type": ["https://onerecord.iata.org/Value"],
+        "https://onerecord.iata.org/Value#unit": "string",
+        "https://onerecord.iata.org/Value#value": 1.25,
+        "id": "string"
+      },
+      "id": "string"
+    },
+    "id": "uld1"
+  },
+  "id": "uld1"
+}
