@@ -47,7 +47,7 @@
     },
     "https://onerecord.iata.org/Company#companyName": "BOLLORE"
   },
-  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://onerecord.fr:8080/companies/bollore",
+  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://onerecord.fr:8082/companies/bollore",
   "https://onerecord.iata.org/CompanyInformation#supportedContentTypes": [
     "application/ld+json"
   ],

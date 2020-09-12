@@ -48,7 +48,7 @@
     },
     "https://onerecord.iata.org/Company#companyName": "Air France CDG"
   },
-  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://thomasmoreau.fr:8080/companies/airfrance",
+  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://onerecord.fr:8083/companies/airfrance",
   "https://onerecord.iata.org/CompanyInformation#supportedContentTypes": [
     "application/ld+json"
   ],

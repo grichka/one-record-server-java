@@ -47,9 +47,9 @@
         "https://onerecord.iata.org/Location#locationType": "Warehouse"
       }
     },
-    "https://onerecord.iata.org/Company#companyName": "BOLLORE"
+    "https://onerecord.iata.org/Company#companyName": "DB Schenker"
   },
-  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://onerecord.fr:8080/companies/dbschenker",
+  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://onerecord.fr:8082/companies/dbschenker",
   "https://onerecord.iata.org/CompanyInformation#supportedContentTypes": [
     "application/ld+json"
   ],

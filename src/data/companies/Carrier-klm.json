@@ -48,7 +48,7 @@
     },
     "https://onerecord.iata.org/Company#companyName": "KLM Cargo"
   },
-  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://thomasmoreau.fr:8080/companies/klm",
+  "https://onerecord.iata.org/CompanyInformation#serverEndpoint": "http://onerecord.fr:8083/companies/klm",
   "https://onerecord.iata.org/CompanyInformation#supportedContentTypes": [
     "application/ld+json"
   ],
