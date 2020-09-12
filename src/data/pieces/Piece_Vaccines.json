@@ -44,7 +44,7 @@
   "https://onerecord.iata.org/Piece#grossWeight": {
     "@id": "_:8024814",
     "@type": ["https://onerecord.iata.org/Value"],
-    "https://onerecord.iata.org/Value#value": "600",
+    "https://onerecord.iata.org/Value#value": "300",
     "https://onerecord.iata.org/Value#unit": "kg"
   },
   "https://onerecord.iata.org/Piece#externalReference": [
